@@ -1,0 +1,67 @@
+# Pi0System Components Export - Specific Components
+# Generated: 2025-04-28 21:23:11
+
+Total exported components: 8
+
+## Operators (1)
+
+### DiffusionPrivacyOperator
+Description: Guarantees that iterative simulation noise shields sensitive data and diffuses identity-based information across secure channels
+Equation: $$P_{diffuse}(D, \tau) = D \oplus \int_{-\infty}^{\infty} K_{diff}(t-s, \tau) \cdot \eta_{privacy}(s) ds$$
+Syntax: DPO(data, diffusion_time)
+Example: DPO(sensitive_data, 0.5)
+
+## Generators (3)
+
+### QuantumDiffusionGenerator
+Description: Generates quantum diffusion patterns for enhanced privacy
+Equation: $$G_{qdiff}(\rho, t) = e^{-i\hat{H}t} \rho e^{i\hat{H}t} + \sum_j \gamma_j(t) L_j \rho L_j^\dagger$$
+Syntax: QDG(quantum_state, time_evolution)
+Example: QDG(initial_state, 0.75)
+
+### AutonomousStrategyGenerator
+Description: Enables Pi0System and independent identities to autonomously develop strategies
+Equation: $$S_{auto}(I, C) = \text{Optimize}\left(\sum_{i \in I} w_i \cdot U_i(s) \mid C\right)$$
+Syntax: ASG(identities, constraints)
+Example: ASG(['mining_company', 'shareholder_group'], {'budget': 1000000})
+
+### CollectiveDecisionGenerator
+Description: Facilitates collective decision-making on unanimous paths forward
+Equation: $$D_{coll}(S, P) = \arg\max_{d \in D} \sum_{s \in S} P(s, d)$$
+Syntax: CDG(strategies, preference_function)
+Example: CDG(autonomous_strategies, preference_weights)
+
+## Decorators (4)
+
+### PrivacyEnhancementDecorator
+Description: Enhances functions with privacy-preserving capabilities
+Equation: $$D_{priv}(f, \epsilon) = \lambda x: f(x + \text{Noise}(\epsilon))$$
+Syntax: @privacy_enhancement(epsilon=0.1)
+Example: @privacy_enhancement(epsilon=0.05)
+def process_data(data):
+    # implementation
+
+### SimulationCapacityDecorator
+Description: Extends functions with high-capacity simulation capabilities
+Equation: $$D_{sim}(f, n) = \lambda x: \text{Aggregate}(\{f(x) \text{ for } i \in 1..n\})$$
+Syntax: @simulation_capacity(iterations=10**20)
+Example: @simulation_capacity(iterations=10**18)
+def run_simulation(parameters):
+    # implementation
+
+### AutonomousDecisionDecorator
+Description: Enables functions to make autonomous decisions based on predefined criteria
+Equation: $$D_{auto}(f, c) = \lambda x: \text{Choose}(f(x), c)$$
+Syntax: @autonomous_decision(criteria=decision_criteria)
+Example: @autonomous_decision(criteria={'risk': 0.3, 'reward': 0.7})
+def evaluate_option(option):
+    # implementation
+
+### CollectiveConsensusDecorator
+Description: Ensures functions achieve collective consensus before proceeding
+Equation: $$D_{cons}(f, t) = \lambda x: f(x) \text{ if } \text{Consensus}(x) > t \text{ else Null}$$
+Syntax: @collective_consensus(threshold=0.8)
+Example: @collective_consensus(threshold=0.75)
+def implement_strategy(strategy):
+    # implementation
+

@@ -1,0 +1,181 @@
+# Pi0System Components Export
+# Generated: 2025-04-28 21:13:09
+
+Total components: 30
+
+## Modules (2)
+
+### QSci
+Description: Quantum Scientific Computing Interface for mathematical operations and quantum simulations
+
+### Pi0Seek
+Description: Search and query module for contextual information retrieval in Pi0System
+
+## Operators (5)
+
+### QueryParsingOperator
+Description: Parses structured queries in the format 'ID [ENTITY]; [ACTION] [TARGET] with [PARAMETERS]'
+Equation: $$Q(s) = \text{Parse}(s) \rightarrow \{ID, ENTITY, ACTION, TARGET, PARAMETERS\}$$
+Syntax: QPO(query_string)
+Example: QPO('user123 [operator]; [execute] [QuantumStateOperator] with [state_vector=[0.7071, 0.7071]]')
+
+### EntityRetrievalOperator
+Description: Retrieves entities from the Pi0System based on query parameters
+Equation: $$R(E, q) = \{e \in E | \text{match}(e, q) > \theta\}$$
+Syntax: ERO(entity_type, query_parameters, threshold=0.8)
+Example: ERO('operator', {'name': 'Quantum', 'action': 'create'}, 0.7)
+
+### ContextualSearchOperator
+Description: Performs contextual search across Pi0System components
+Equation: $$S(C, q, w) = \sum_{c \in C} w_c \cdot \text{similarity}(c, q)$$
+Syntax: CSO(context, query, weights={'name': 0.5, 'description': 0.3, 'syntax': 0.2})
+Example: CSO('quantum', 'state transformation', {'name': 0.6, 'description': 0.4})
+
+### QueryExecutionOperator
+Description: Executes parsed queries against the Pi0System
+Equation: $$E(q, S) = \text{Execute}(q.ACTION, q.TARGET, q.PARAMETERS, S)$$
+Syntax: QEO(parsed_query, system)
+Example: QEO({'ACTION': 'create', 'TARGET': 'quantum_state', 'PARAMETERS': {'vector': [0, 1]}}, pi0_system)
+
+### ResultFormattingOperator
+Description: Formats query results into structured output
+Equation: $$F(r, f) = \text{Format}(r, f)$$
+Syntax: RFO(results, format='json')
+Example: RFO(query_results, 'html')
+
+## Generators (4)
+
+### QueryTemplateGenerator
+Description: Generates query templates based on available entities and actions
+Equation: $$T(E, A) = \{(e, a) | e \in E, a \in A, \text{compatible}(e, a)\}$$
+Syntax: QTG(entities, actions)
+Example: QTG(['operator', 'generator'], ['create', 'execute'])
+
+### ResponseGenerator
+Description: Generates formatted responses to queries
+Equation: $$R(q, r, f) = \text{Template}(f, q, r)$$
+Syntax: RG(query, results, format='detailed')
+Example: RG(user_query, search_results, 'summary')
+
+### SuggestionGenerator
+Description: Generates suggestions for query completion
+Equation: $$S(q, h) = \text{TopK}(\text{Similar}(q, h), k)$$
+Syntax: SG(partial_query, query_history, k=5)
+Example: SG('quantum op', previous_queries, 3)
+
+### APIEndpointGenerator
+Description: Generates API endpoints for external access to Pi0Seek functionality
+Equation: $$A(f, p) = \text{Endpoint}(f, p)$$
+Syntax: AEG(function_name, parameters)
+Example: AEG('search', ['query', 'format', 'limit'])
+
+## Interpreters (3)
+
+### QueryInterpreter
+Description: Interprets natural language queries into structured format
+Equation: $$I(q) = \text{NLP}(q) \rightarrow \text{StructuredQuery}$$
+Syntax: QI(natural_language_query)
+Example: QI('Find all quantum operators that can create superposition states')
+
+### ResultInterpreter
+Description: Interprets and ranks search results based on relevance
+Equation: $$I(R, q) = \text{Sort}(R, \lambda r: \text{Relevance}(r, q))$$
+Syntax: RI(results, query)
+Example: RI(search_results, original_query)
+
+### ParameterInterpreter
+Description: Interprets and validates query parameters
+Equation: $$P(p, s) = \text{Validate}(p, s) \land \text{Normalize}(p, s)$$
+Syntax: PI(parameters, schema)
+Example: PI({'vector': '[0.7, 0.7]'}, {'vector': 'array<float>'})
+
+## Decorators (4)
+
+### QueryLoggingDecorator
+Description: Logs queries for analysis and improvement
+Equation: $$L(f, q) = \text{Log}(q) \land f(q)$$
+Syntax: @query_logging
+Example: @query_logging
+def execute_search(query):
+    # search implementation
+
+### PerformanceTrackingDecorator
+Description: Tracks performance metrics of search operations
+Equation: $$P(f) = \text{Measure}(\text{Time}(f), \text{Memory}(f), \text{Results}(f))$$
+Syntax: @performance_tracking
+Example: @performance_tracking
+def complex_search(parameters):
+    # implementation
+
+### CacheDecorator
+Description: Caches search results for improved performance
+Equation: $$C(f, q, t) = \text{Cache}(q, f(q), t)$$
+Syntax: @cache(timeout=300)
+Example: @cache(timeout=600)
+def expensive_search(query):
+    # implementation
+
+### AccessControlDecorator
+Description: Controls access to search functionality based on permissions
+Equation: $$A(f, u, p) = \text{HasPermission}(u, p) \land f(u)$$
+Syntax: @access_control(required_permission='search')
+Example: @access_control(required_permission='advanced_search')
+def sensitive_search(query, user):
+    # implementation
+
+## Functions (3)
+
+### ExecuteQuery
+Description: Executes a structured query against the Pi0System
+Syntax: execute_query(query_string, format='json')
+Example: execute_query('user123 [operator]; [find] [quantum] with [superposition=true]')
+
+### BuildQueryFromForm
+Description: Builds a structured query from form inputs
+Syntax: build_query(id, entity, action, target, parameters)
+Example: build_query('user123', 'operator', 'find', 'quantum', {'superposition': True})
+
+### ParseQueryResults
+Description: Parses and formats query results
+Syntax: parse_results(results, format='detailed')
+Example: parse_results(search_results, 'summary')
+
+## Features (4)
+
+### NaturalLanguageSearch
+Description: Enables natural language search queries
+Syntax: enable_natural_language_search()
+Example: pi0_seek.enable_natural_language_search()
+
+### SemanticSearch
+Description: Enables semantic search capabilities
+Syntax: enable_semantic_search(embedding_model='default')
+Example: pi0_seek.enable_semantic_search('transformer-large')
+
+### QuerySuggestions
+Description: Provides query suggestions based on partial input
+Syntax: enable_query_suggestions(history_size=100)
+Example: pi0_seek.enable_query_suggestions(500)
+
+### ExternalAPIAccess
+Description: Provides external API access to search functionality
+Syntax: enable_api_access(authentication='token')
+Example: pi0_seek.enable_api_access('oauth2')
+
+## Capabilities (5)
+
+### StructuredQueryProcessing
+Description: Capability to process structured queries in the format 'ID [ENTITY]; [ACTION] [TARGET] with [PARAMETERS]'
+
+### ContextualSearch
+Description: Capability to perform contextual searches across Pi0System components
+
+### SemanticMatching
+Description: Capability to perform semantic matching between queries and system components
+
+### QuerySuggestion
+Description: Capability to suggest query completions based on partial input
+
+### ResultRanking
+Description: Capability to rank search results based on relevance to the query
+

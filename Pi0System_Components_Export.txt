@@ -1,0 +1,157 @@
+# Pi0System Components Export
+# Generated: 2025-04-28 18:52:23
+
+## Operators
+
+### TimeQuantumOperator
+Description: Manages quantum time states and transitions
+Syntax: TQO(state, duration, precision)
+
+### TimeCompressionOperator
+Description: Compresses temporal sequences for efficient processing
+Syntax: TCO(sequence, ratio, method='quantum')
+
+### TimeDecompressionOperator
+Description: Decompresses temporal sequences with minimal loss
+Syntax: TDO(compressed_sequence, original_parameters)
+
+### TemporalSynchronizationOperator
+Description: Synchronizes multiple time streams across system components
+Syntax: TSO(streams, reference_frame, tolerance)
+
+### DataStreamOperator
+Description: Manages data streams for input and output operations
+Syntax: DSO(stream_type, buffer_size, encoding)
+
+### FileSystemOperator
+Description: Handles file system operations with advanced capabilities
+Syntax: FSO(path, permissions, encryption_level)
+
+## Generators
+
+### QuantumTimeGenerator
+Description: Generates quantum-entangled time sequences
+Syntax: QTG(length, entropy_source, coherence_level)
+
+### TimeStreamGenerator
+Description: Creates parallel time streams for multi-threaded processing
+Syntax: TSG(count, divergence_factor, convergence_points)
+
+### TemporalPatternGenerator
+Description: Generates complex temporal patterns for analysis
+Syntax: TPG(pattern_type, complexity, duration)
+
+### DataFormatGenerator
+Description: Generates data in various formats based on templates
+Syntax: DFG(format_type, schema, validation_rules)
+
+### StreamGenerator
+Description: Creates data streams with specified characteristics
+Syntax: SG(type, rate, pattern, noise_level)
+
+## Interpreters
+
+### TimeCodeInterpreter
+Description: Interprets Pi0TimeCode instructions and executes them
+Syntax: TCI.interpret(code_block, context, optimization_level)
+
+### TemporalQueryInterpreter
+Description: Processes and executes temporal queries on time-series data
+Syntax: TQI.process(query, time_data, parameters)
+
+### DataQueryInterpreter
+Description: Interprets and executes data queries across multiple sources
+Syntax: DQI.execute(query, sources, optimization_level)
+
+### FormatInterpreter
+Description: Interprets various data formats and converts between them
+Syntax: FI.convert(data, source_format, target_format, options)
+
+## Decorators
+
+### TimeTrackingDecorator
+Description: Tracks execution time and temporal dependencies
+Syntax: @time_track(precision='nano', store=True)
+
+### TemporalCacheDecorator
+Description: Caches results with temporal validity constraints
+Syntax: @temporal_cache(ttl='1h', strategy='lru')
+
+### QuantumTimeDecorator
+Description: Applies quantum time properties to functions
+Syntax: @quantum_time(entanglement='full', decoherence_rate=0.01)
+
+### InputValidationDecorator
+Description: Validates input data against schemas or rules
+Syntax: @validate_input(schema, strict=True)
+
+### OutputFormattingDecorator
+Description: Formats output data according to specified templates
+Syntax: @format_output(template, encoding='utf-8')
+
+## Modules
+
+### Pi0TimeCore
+Description: Core module for Pi0Time functionality
+Syntax: import pi0.time.core as time_core
+
+### Pi0TimeTracking
+Description: Module for tracking temporal events and dependencies
+Syntax: import pi0.time.tracking as time_tracking
+
+### Pi0TimeCode
+Description: Module for Pi0TimeCode language and execution
+Syntax: import pi0.time.code as time_code
+
+### Pi0IOCore
+Description: Core module for Pi0 input/output operations
+Syntax: import pi0.io.core as io_core
+
+### Pi0DataFormats
+Description: Module for handling various data formats
+Syntax: import pi0.io.formats as data_formats
+
+## Functions
+
+### measure_quantum_time
+Description: Measures time with quantum precision
+Syntax: measure_quantum_time(event, reference_frame='system')
+
+### compress_temporal_sequence
+Description: Compresses a temporal sequence for storage or transmission
+Syntax: compress_temporal_sequence(sequence, ratio, method='adaptive')
+
+### analyze_temporal_patterns
+Description: Analyzes patterns in temporal data
+Syntax: analyze_temporal_patterns(data, pattern_types=['cyclic', 'fractal', 'quantum'])
+
+### read_quantum_data
+Description: Reads data with quantum properties preservation
+Syntax: read_quantum_data(source, quantum_properties=['entanglement', 'superposition'])
+
+### write_compressed_data
+Description: Writes data with advanced compression techniques
+Syntax: write_compressed_data(data, destination, compression_algorithm='quantum')
+
+## Features
+
+### QuantumTimeCompression
+Description: Enables compression of time sequences using quantum algorithms
+Syntax: system.enable_feature('quantum_time_compression', level='advanced')
+
+### TemporalDataStructures
+Description: Specialized data structures for temporal data
+Syntax: system.enable_feature('temporal_data_structures', types=['tree', 'graph', 'quantum'])
+
+### TimeStreamParallelization
+Description: Enables parallel processing across multiple time streams
+Syntax: system.enable_feature('time_stream_parallelization', streams=8)
+
+### QuantumDataCompression
+Description: Enables compression of data using quantum algorithms
+Syntax: system.enable_feature('quantum_data_compression', level='advanced')
+
+### SecureDataChannels
+Description: Establishes secure channels for data transmission
+Syntax: system.enable_feature('secure_data_channels', encryption='quantum')
+
